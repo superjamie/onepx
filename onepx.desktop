@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=onepx
+Type=X-GNOME-Metatheme
+Comment=A one pixel border
+
+Name[en_AU]=onepx
+
+[X-GNOME-Metatheme]
+MetacityTheme=onepx

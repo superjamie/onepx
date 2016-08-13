@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<metacity_theme>
+    <info>
+        <name>onepx</name>
+        <author>Jamie Bainbridge</author>
+        <copyright>Jamie Bainbridge, 2016</copyright>
+        <date>2016-07-14</date>
+        <description>A one pixel border</description>
+    </info>
+
+<frame_geometry name="frame_geometry_normal" has_title="false">
+    <distance name="left_width" value="1"/>
+    <distance name="right_width" value="1"/>
+    <distance name="bottom_height" value="1"/>
+    <distance name="left_titlebar_edge" value="0"/>
+    <distance name="right_titlebar_edge" value="0"/>
+    <distance name="title_vertical_pad" value="0"/>
+    <distance name="button_width" value="0"/>
+    <distance name="button_height" value="0"/>
+    <border name="title_border" left="0" right="0" top="1" bottom="0"/>
+    <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<frame_geometry name="frame_geometry_maximized" parent="frame_geometry_normal">
+    <distance name="left_width" value="0"/>
+    <distance name="right_width" value="0"/>
+    <distance name="bottom_height" value="0"/>
+    <border name="title_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<draw_ops name="draw_frame">
+    <rectangle color="#000000" x="0" y="0" width="width" height="height" filled="true"/>
+</draw_ops>
+
+<draw_ops name="draw_nothing">
+</draw_ops>
+
+<frame_style name="frame_style_normal_focused" geometry="frame_geometry_normal">
+    <piece position="title" draw_ops="draw_frame"/>
+    <piece position="titlebar" draw_ops="draw_frame"/>
+    <piece position="left_edge" draw_ops="draw_frame"/>
+    <piece position="right_edge" draw_ops="draw_frame"/>
+    <piece position="bottom_edge" draw_ops="draw_frame"/>
+    <button function="close" state="normal" draw_ops="draw_nothing"/>
+    <button function="close" state="prelight" draw_ops="draw_nothing"/>
+    <button function="close" state="pressed" draw_ops="draw_nothing"/>
+    <button function="minimize" state="normal" draw_ops="draw_nothing"/>
+    <button function="minimize" state="prelight" draw_ops="draw_nothing"/>
+    <button function="minimize" state="pressed" draw_ops="draw_nothing"/>
+    <button function="maximize" state="normal" draw_ops="draw_nothing"/>
+    <button function="maximize" state="prelight" draw_ops="draw_nothing"/>
+    <button function="maximize" state="pressed" draw_ops="draw_nothing"/>
+    <button function="menu" state="normal" draw_ops="draw_nothing"/>
+    <button function="menu" state="prelight" draw_ops="draw_nothing"/>
+    <button function="menu" state="pressed" draw_ops="draw_nothing"/>
+</frame_style>
+
+<frame_style name="frame_style_normal_unfocused" parent="frame_style_normal_focused">
+</frame_style>
+
+<frame_style name="frame_style_normal_focused_maximized" parent="frame_style_normal_focused" geometry="frame_geometry_maximized">
+</frame_style>
+
+<frame_style name="frame_style_normal_unfocused_maximized" parent="frame_style_normal_unfocused" geometry="frame_geometry_maximized">
+</frame_style>
+
+<frame_style_set name="frame_style_set_normal">
+    <frame focus="yes" state="normal" resize="both" style="frame_style_normal_focused"/>
+    <frame focus="no" state="normal" resize="both" style="frame_style_normal_unfocused"/>
+    <frame focus="yes" state="maximized" style="frame_style_normal_focused_maximized"/>
+    <frame focus="no" state="maximized" style="frame_style_normal_unfocused_maximized"/>
+    <frame focus="yes" state="shaded" style="frame_style_normal_focused"/>
+    <frame focus="no" state="shaded" style="frame_style_normal_unfocused"/>
+    <frame focus="yes" state="maximized_and_shaded" style="frame_style_normal_focused_maximized"/>
+    <frame focus="no" state="maximized_and_shaded" style="frame_style_normal_unfocused_maximized"/>
+</frame_style_set>
+
+<window type="normal" style_set="frame_style_set_normal"/>
+<window type="dialog" style_set="frame_style_set_normal"/>
+<window type="modal_dialog" style_set="frame_style_set_normal"/>
+<window type="menu" style_set="frame_style_set_normal"/>
+<window type="utility" style_set="frame_style_set_normal"/>
+<window type="border" style_set="frame_style_set_normal"/>
+
+</metacity_theme>
