@@ -1,0 +1,5 @@
+/* XPM */
+static char * one_black_pixel[] = {
+"1 1 1 1",
+" 	c #000000",
+" "};
