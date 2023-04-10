@@ -1,6 +1,6 @@
 # onepx
 
-A one pixel border theme for Metacity, Marco, and XFWM.
+A one pixel black window border theme for Metacity, Marco, and XFWM.
 
 ![](onepx.png)
 
